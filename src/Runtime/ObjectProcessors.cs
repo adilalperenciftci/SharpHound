@@ -464,7 +464,9 @@ namespace Sharphound.Runtime {
                     StrongCertificateBindingEnforcement =
                         _dcRegistryProcessor.GetStrongCertificateBindingEnforcement(apiName),
                     VulnerableNetlogonSecurityDescriptor =
-                        _dcRegistryProcessor.GetVulnerableNetlogonSecurityDescriptor(apiName)
+                        _dcRegistryProcessor.GetVulnerableNetlogonSecurityDescriptor(apiName),
+                    CurrentBuildNumber = _dcRegistryProcessor.GetCurrentBuildNumber(apiName),
+                    CurrentBuildRevision = _dcRegistryProcessor.GetCurrentBuildRevision(apiName)
                 };
 
                 ret.DCRegistryData = dCRegistryData;
