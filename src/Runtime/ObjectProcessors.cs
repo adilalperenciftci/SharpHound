@@ -327,7 +327,7 @@ namespace Sharphound.Runtime {
             }
 
             if (resolvedSearchResult.IsDomainController)
-                ProcessDomainController(resolvedSearchResult, ret, apiName);
+                await ProcessDomainController(resolvedSearchResult, ret, apiName);
 
             var trimmedSamAccountName = samAccountName?.TrimEnd('$');
 
@@ -453,7 +453,7 @@ namespace Sharphound.Runtime {
                 })).Value;
         }
 
-        private async void ProcessDomainController(ResolvedSearchResult resolvedSearchResult, Computer ret,
+        private async Task ProcessDomainController(ResolvedSearchResult resolvedSearchResult, Computer ret,
             string apiName) {
             _log.LogDebug("Processing DC: {dc}", apiName);
 
